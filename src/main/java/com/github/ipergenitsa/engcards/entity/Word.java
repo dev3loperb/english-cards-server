@@ -1,8 +1,14 @@
 package com.github.ipergenitsa.engcards.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Word {
+    @Id
     private Long id;
-    private String word;
+    private String original;
+    private String translation;
 
     public Long getId() {
         return id;
@@ -12,11 +18,19 @@ public class Word {
         this.id = id;
     }
 
-    public String getWord() {
-        return word;
+    public String getOriginal() {
+        return original;
     }
 
-    public void setWord(String word) {
-        this.word = word;
+    public void setOriginal(String original) {
+        this.original = original;
+    }
+
+    public String getTranslation() {
+        return translation;
+    }
+
+    public void setTranslation(String translation) {
+        this.translation = translation;
     }
 }

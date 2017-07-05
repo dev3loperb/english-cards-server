@@ -6,17 +6,24 @@ $("#addWordForm").submit(function(event){
 
 function submitForm(){
     // Initiate Variables With Form Content
-    var originalWord = $("#original_word").val();
-    var translation = $("#translation").val();
+    var word = {}
+    word['original'] = $("#original_word").val();
+    word['translation'] = $("#translation").val();
+
+    console.log(JSON.stringify(word))
 
     $.ajax({
         type: "POST",
+        contentType: "application/json",
         url: "api/add-word",
-        data: "originalWord=" + originalWord + "&translation=" + translation,
+        data: JSON.stringify(word),
         success : function(text){
             if (text == "success"){
                 formSuccess();
             }
+        },
+        error: function(err) {
+            console.log(err.responseText)
         }
     });
 }

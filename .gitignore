@@ -67,3 +67,9 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+src/main/java/com/github/ipergenitsa/engcards/word/
+target/
+testdb.log
+testdb.properties
+testdb.script
+testdb.tmp/

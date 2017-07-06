@@ -1,11 +1,13 @@
 package com.github.ipergenitsa.engcards.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Word {
     @Id
+    @GeneratedValue
     private Long id;
     private String original;
     private String translation;

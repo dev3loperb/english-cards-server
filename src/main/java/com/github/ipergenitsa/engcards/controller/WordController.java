@@ -11,4 +11,9 @@ public class WordController {
         model.addAttribute("appName", "Word cards");
         return "index";
     }
+
+    @GetMapping("/words")
+    public String allWords() {
+        return "words";
+    }
 }

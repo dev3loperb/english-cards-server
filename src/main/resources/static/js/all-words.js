@@ -2,16 +2,16 @@ function fillWords() {
     fetchAllWords(function(allWords) {
         var newTbody = document.createElement('tbody');
         var oldTbody = document.getElementById('allWordsTable').tBodies[0]
-        for (var words in allWords) {
-            var tr = document.createElement('TR');
+        allWords.forEach(function(word) {
+            var tr = document.createElement('TR')
             var tdOriginal = document.createElement('TD')
             var tdTranslation = document.createElement('TD')
-            tdOriginal.appendChild(document.createTextNode(allWords[words]['original']));
-            tdTranslation.appendChild(document.createTextNode(allWords[words]['translation']));
+            tdOriginal.appendChild(document.createTextNode(word['original']))
+            tdTranslation.appendChild(document.createTextNode(word['translation']))
             tr.appendChild(tdOriginal)
             tr.appendChild(tdTranslation)
-            newTbody.appendChild(tr);
-        }
+            newTbody.appendChild(tr)
+        })
         oldTbody.parentNode.replaceChild(newTbody, oldTbody)
     })
 }

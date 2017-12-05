@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sun.plugin.dom.exception.InvalidStateException;
 
 @RestController
 @RequestMapping("api/word")
@@ -32,7 +31,7 @@ public class WordApiController {
         if (wordRepository.save(wordToSave) != null) {
             return "success";
         }
-        throw new InvalidStateException("Cannot save word to database");
+        throw new IllegalStateException("Cannot save word to database");
     }
 
     @GetMapping("/random")

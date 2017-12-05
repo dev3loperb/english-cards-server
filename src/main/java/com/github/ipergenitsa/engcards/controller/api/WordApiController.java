@@ -7,6 +7,7 @@ import com.github.ipergenitsa.engcards.controller.api.rest.RestWord;
 import com.github.ipergenitsa.engcards.entity.Word;
 import com.github.ipergenitsa.engcards.repository.WordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,6 +36,7 @@ public class WordApiController {
     }
 
     @GetMapping("/random")
+    @CrossOrigin
     public Word getRandomWord() {
         return wordRepository.findRandom();
     }
